@@ -91,7 +91,7 @@ This is the most critical part of the setup.
 3.  **Update the database password in the code.** Open the `index.py` file and find the following line (around line 25):
     ```python
     # IMPORTANT: Change the password to your own MySQL root password!
-    mydb = pymysql.connect(host="localhost", user="root", password="Tanishq#22", database="ai_interview")
+    mydb = pymysql.connect(host="localhost", user="root", password="root", database="ai_interview")
     ```
 4.  **Create the required tables.** Run the following SQL commands in your `ai_interview` database to set up the necessary tables:
     ```sql
