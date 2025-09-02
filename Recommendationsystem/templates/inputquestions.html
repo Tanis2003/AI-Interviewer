@@ -1,0 +1,441 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="utf-8">
+     <title>Tech Talk Interview</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+
+<link href="{% static  '/favicon.ico' %}" rel="icon">
+
+
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/static/css/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/static/css/style.css" rel="stylesheet">
+
+    <style>
+        #myInput {
+            width: 600px; /* Set the width to 300 pixels */
+          }
+          /* Custom CSS styles */
+          .custom-card {
+              /* Add your custom card styles here */
+              border: none;
+              background: transparent;
+          }
+          .custom-card-body {
+              /* Add your custom card body styles here */
+              background-color: transparent;
+              padding: 0;
+          }
+          .bg-header {
+            background-image: url('{% static "/input1.webp" %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height:900px;
+        }
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin:0;
+            padding:0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(#141e30, #243b55);
+        }
+
+        .login-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 700px;
+            padding: 40px;
+            transform: translate(-50%, -50%);
+            background: transparent;
+            box-sizing: border-box;
+            box-shadow: none;
+            border-radius: 10px;
+        }
+
+        .login-box h2 {
+            margin: 0 0 30px;
+            padding: 0;
+            color: white;
+            text-align: center;
+        }
+
+        .login-box .user-box {
+            position: relative;
+        }
+
+        .login-box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+        }
+        
+                 /* Ensure form elements have white backgrounds */
+         .form-control {
+             background-color: white !important;
+             border: 1px solid #ddd;
+             color: #333;
+         }
+         
+         .form-control:focus {
+             background-color: white !important;
+             border-color: #007bff;
+             box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+         }
+         
+         .form-control::placeholder {
+             color: #999;
+         }
+         
+         /* Style labels to be more visible */
+         label {
+             color: white;
+             font-weight: 600;
+             margin-bottom: 8px;
+         }
+         
+         /* Add background box for titles */
+         .title-background {
+             background: rgba(0, 0, 0, 0.7);
+             padding: 20px;
+             border-radius: 10px;
+             margin-bottom: 30px;
+             backdrop-filter: blur(5px);
+         }
+         
+         .title-background h1 {
+             margin: 0;
+             color: white;
+         }
+         
+         .title-background h2 {
+             margin: 0;
+             color: white;
+         }
+        .login-box .user-box label {
+            position: absolute;
+            top:0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .login-box .user-box input:focus ~ label,
+        .login-box .user-box input:valid ~ label {
+            top: -20px;
+            left: 0;
+            color: #03e9f4;
+            font-size: 12px;
+        }
+
+        .login-box form a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: #03e9f4;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            letter-spacing: 4px
+        }
+
+        .login-box a:hover {
+            background: #03e9f4;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #03e9f4,
+                        0 0 25px #03e9f4,
+                        0 0 50px #03e9f4,
+                        0 0 100px #03e9f4;
+        }
+
+        .login-box a span {
+            position: absolute;
+            display: block;
+        }
+
+        .login-box a span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #03e9f4);
+            animation: btn-anim1 1s linear infinite;
+        }
+
+        @keyframes btn-anim1 {
+            0% {
+                left: -100%;
+            }
+            50%,100% {
+                left: 100%;
+            }
+        }
+
+        .login-box a span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #03e9f4);
+            animation: btn-anim2 1s linear infinite;
+            animation-delay: .25s
+        }
+
+        @keyframes btn-anim2 {
+            0% {
+                top: -100%;
+            }
+            50%,100% {
+                top: 100%;
+            }
+        }
+
+        .login-box a span:nth-child(3) {
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, #03e9f4);
+            animation: btn-anim3 1s linear infinite;
+            animation-delay: .5s
+        }
+
+        @keyframes btn-anim3 {
+            0% {
+                right: -100%;
+            }
+            50%,100% {
+                right: 100%;
+            }
+        }
+
+        .login-box a span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #03e9f4);
+            animation: btn-anim4 1s linear infinite;
+            animation-delay: .75s
+        }
+        
+        /* Styling for optgroups in the dropdown */
+        optgroup {
+            font-weight: bold;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        optgroup[label="Programming Languages"] {
+            color: #007bff;
+        }
+        
+        optgroup[label="Core Subjects"] {
+            color: #28a745;
+        }
+        
+        optgroup[label="HR/Behavioural"] {
+            color: #ff6b35;
+        }
+        
+        option {
+            font-weight: normal;
+            color: #333;
+            padding: 5px;
+        }
+
+        @keyframes btn-anim4 {
+            0% {
+                bottom: -100%;
+            }
+            50%,100% {
+                bottom: 100%;
+            }
+        }
+        
+    </style>
+
+
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <div class="navbar-brand p-0">
+                <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>TechTalk Interview</h1>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="{% url 'dashboard' %}" class="nav-item nav-link">Home</a>
+                    <a href="{% url 'viewuser' %}" class="nav-item nav-link">View User Profile</a>
+                    <a href="{% url 'inputquestions' %}" class="nav-item nav-link active">Input Questions</a>
+                    <a href="{% url 'showquestion' %}" class="nav-item nav-link">Show Questions</a>
+                    <a href="{% url 'logout' %}" class="nav-item nav-link">LogOut</a>
+                </div>
+                <button type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
+                
+            </div>
+        </nav>
+
+
+                 <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+             <div class="row py-5">
+                 <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                     <div class="title-background d-inline-block">
+                         <h1 class="display-4 text-white animated zoomIn">Input Questions</h1>
+                     </div>
+                     <br><br><br><br><br>
+                  <!--  <a href="" class="h5 text-white">Home</a>
+                     <i class="far fa-circle text-white px-2"></i>
+                     <a href="" class="h5 text-white">Input Questions</a>-->
+                 </div>
+             </div><br><br><br>
+            
+           
+    <div class="container-fluid py-10 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card custom-card">
+                        <div class="card-body custom-card-body">
+                                                         <div class="login-box"> <!-- Add the login-box class here -->
+                                 <div class="title-background text-center">
+                                     <h2>Input Your Questions and Answers</h2>
+                                 </div>
+                                 <form action="{% url 'inputquestions' %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="programming-language">Select Programming Language/Subject</label>
+                                        <select class="form-control" id="programming-language" name="programminglanguage">
+                                            <optgroup label="Programming Languages">
+                                                <option value="Python">Python</option>
+                                                <option value="C++">C++</option>
+                                                <option value="Java">Java</option>
+                                            </optgroup>
+                                            <optgroup label="Core Subjects">
+                                                <option value="Operating Systems">Operating Systems</option>
+                                                <option value="Data Structures">Data Structures</option>
+                                                <option value="Database Management Systems">Database Management Systems</option>
+                                            </optgroup>
+                                            <optgroup label="HR/Behavioural">
+                                                <option value="Behavioural">Behavioural</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                    <br/>
+
+                                    <div class="form-group">
+                                        <label for="question">Enter Your Question</label>
+                                        <input type="text" class="form-control" id="question" name="inputquestions" style="height: 50px;">
+                                    </div>
+                                    <br/>
+
+                                    <div class="form-group">
+                                        <label for="answer">Enter Your Answer</label>
+                                        <textarea class="form-control" id="answer" name="inputanswer" rows="4" cols="50"></textarea>
+                                    </div>
+                                    <br/>
+                                    <br/>
+
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                                
+                                <!-- Display messages -->
+                                {% if messages %}
+                                <div class="messages-container mt-3">
+                                    {% for message in messages %}
+                                        {% if message.tags == 'success' %}
+                                            <div class="alert alert-success" role="alert">
+                                                <i class="fas fa-check-circle"></i> {{ message }}
+                                            </div>
+                                        {% else %}
+                                            <div class="alert alert-danger" role="alert">
+                                                <i class="fas fa-exclamation-circle"></i> {{ message }}
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    
+
+
+
+  
+  
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static  '/css/wow.min.js' %}" ></script>
+<script src="{% static  '/css/easing.min.js' %}"></script>
+<script src="{% static  '/css/waypoints.min.js' %}"></script>
+<script src="{% static  '/css/counterup.min.js' %}"></script>
+<script src="{% static  '/css/owl.carousel.min.js' %}"></script>
+
+<!-- Template Javascript -->
+<script src="{% static  '/css/main.js' %}"></script>
+</body>
+
+</html>

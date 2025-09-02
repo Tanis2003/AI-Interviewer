@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Prediction - TechTalk</title>
+    <link href="{% static '/static/css/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        .btn-back {
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: 10px 30px;
+            margin-top: 20px;
+        }
+        .btn-back:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 class="text-center mb-4">Live Prediction</h1>
+            <p class="text-center">This feature is coming soon!</p>
+            <div class="text-center">
+                <a href="{% url 'login' %}" class="btn btn-primary btn-back">Go Back</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
