@@ -1,6 +1,3 @@
-# AI-Interviewer
-Of course\! Here is the updated `README.md` file with the concise description you requested.
-
 # 🤖 AI Interviewer System
 
 An AI-powered Django application that conducts interviews using text-to-speech and evaluates answers with an NLP-based similarity score.
